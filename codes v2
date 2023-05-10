@@ -1,0 +1,23 @@
+import random
+
+print("Добро пожаловать в игру 'Угадай число!'")
+print("Я загадал число от 1 до 100. У вас есть 5 попыток, чтобы его угадать.")
+
+secret_number = random.randint(1, 100)
+guess = 0
+tries = 0
+
+while guess != secret_number and tries < 5:
+    guess_text = input("Ваша попытка: ")
+    guess = int(guess_text)
+    tries += 1
+
+    if guess < secret_number:
+        print("Слишком низко!")
+    elif guess > secret_number:
+        print("Слишком высоко!")
+    
+if guess == secret_number:
+    print("Вы угадали число! Поздравляю!")
+else:
+    print("Вы не справились. Я загадал число", secret_number)
